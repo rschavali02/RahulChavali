@@ -381,7 +381,7 @@ export default function Home() {
 
         {/* Footer */}
         <footer className="text-center text-gray-400 mt-12">
-          <p>© {new Date().getFullYear()} Your Name. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Rahul Chavali. All rights reserved.</p>
           <p className="text-sm mt-1">Built with Next.js and Tailwind CSS</p>
         </footer>
       </div>
