@@ -83,7 +83,7 @@ export default function Home() {
                     <li>Artificial Intelligence & Machine Learning</li>
                     <li>Product Development</li>
                     <li>Voice Technology</li>
-                    <li>Ask me about fantasy football, Kansas City Chiefs, poker, soccer, or anything tech!</li>
+                    <li>Ask me about fantasy football, Kansas City Chiefs, drumming, poker, soccer, or anything tech!</li>
                   </ul>
                 </div>
 
