@@ -5,12 +5,12 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-
+//fix
 export default function Home() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-gray-950 to-gray-900 text-white">
       <div className="container mx-auto px-4 py-12 max-w-4xl">
-        {/* Header Section */}
+        {/* Header Section */} 
         <div className="flex flex-col md:flex-row items-center md:items-start gap-8 mb-12">
           <div className="relative w-48 h-48 rounded-full overflow-hidden border-4 border-gray-700">
             <Image
