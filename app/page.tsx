@@ -108,7 +108,7 @@ export default function Home() {
                     <li className="flex gap-3">
                       <span className="text-green-400">▹</span>
                       <div>
-                        <p className="font-medium">President of the McKlevey Fellowship</p>
+                        <p className="font-medium">President of the McKelvey Fellowship</p>
                         <div className="text-blue-400">
                         <Link href={"https://www.mckelveyfellowship.com/"}>Fellowship Website</Link>
                         </div>
@@ -120,7 +120,7 @@ export default function Home() {
                     <li className="flex gap-3">
                       <span className="text-green-400">▹</span>
                       <div>
-                        <p className="font-medium">Engineering Intern at Deepgram</p>
+                        <p className="font-medium">Engineering Intern at Deepgram (YC16)</p>
                         <p className="text-gray-400">Building AI experiences and voice applications under the Chief Strategy Officer. </p>
                         <p className="text-gray-400">Series B startup backed by YCombinator, WingVC, Blackrock, Nvidia, etc. </p>
                       </div>
@@ -137,7 +137,7 @@ export default function Home() {
                         <p className="font-medium">Machine Learning Research Assistant</p>
                         <Link href={"https://github.com/rschavali02/ML-Research--UNET-1D-CNN-Image-Denoiser"} className="text-blue-400">Link to Work</Link>
                         <p className="text-gray-400">Worked in the Computational Imaging Lab @ Washington University in St. Louis. Build CNN models for 1D denoising on hyperspectral images.</p>
-                        <p className="text-gray-400">Build CNN models for 1D denoising on hyperspectral images.</p>
+                        <p className="text-gray-400">Built CNN models for 1D denoising on hyperspectral images.</p>
                       </div>
                     </li>
                     <li className="flex gap-3">
@@ -154,7 +154,7 @@ export default function Home() {
                       <div>
                         <p className="font-medium">Product Development @ WashU GSDC</p>
                         <p className="text-gray-400">
-                          Led 6 developers to create and app for WashU's on campus ice cream store. Built full-stack and ideated product iterations. 
+                          Led 6 developers to create an app for WashU's on campus ice cream store. Built full-stack and ideated product iterations. 
                         </p>
                       </div>
                     </li>
@@ -265,7 +265,7 @@ export default function Home() {
                   <CardDescription>Python</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p>A study tool that transcribe YouTube/personal videos and creates customizable notes for any subject</p>
+                  <p>A study tool that transcribes YouTube/personal videos and creates customizable notes for any subject</p>
                 </CardContent>
                 <CardFooter>
                   <div className="flex gap-2">
