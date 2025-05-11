@@ -9,7 +9,14 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "Rahul Chavali | Personal Portfolio",
   description: "Personal portfolio website showcasing projects and experience",
-    generator: 'v0.dev'
+  icons: {
+    icon: [
+      {
+        url: '/favicon.ico',
+        sizes: 'any',
+      }
+    ]
+  }
 }
 
 export default function RootLayout({
