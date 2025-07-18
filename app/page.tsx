@@ -120,7 +120,7 @@ export default function Home() {
                     <li className="flex gap-3">
                       <span className="text-green-400">▹</span>
                       <div>
-                        <p className="font-medium">Engineering Intern at Deepgram (YC16)</p>
+                        <p className="font-medium">Engineering & Product Intern at Deepgram (YC16)</p>
                         <p className="text-gray-400">Building AI experiences and voice applications under the Chief Strategy Officer. </p>
                         <p className="text-gray-400">Series B startup backed by YCombinator, WingVC, Blackrock, Nvidia, etc. </p>
                       </div>
@@ -175,6 +175,32 @@ export default function Home() {
 
           <TabsContent value="projects" className="mt-6">
             <div className="grid gap-6 md:grid-cols-2">
+              <Card className="bg-gray-800 border-gray-700">
+                <CardHeader>
+                  <div className="flex justify-between items-start">
+                    <CardTitle>VocalFlow</CardTitle>
+                    <Button variant="ghost" size="icon" asChild>
+                      <Link href="https://github.com/RahulC-DG/VoiceCreation" target="_blank">
+                        <ExternalLink className="h-4 w-4" />
+                      </Link>
+                    </Button>
+                  </div>
+                  <CardDescription>Typescript / Web</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p>A voice-first AI assistant that helps users design and build web applications through natural conversation.</p>
+                </CardContent>
+                <CardFooter>
+                  <div className="flex gap-2">
+                    <Badge variant="secondary">AI</Badge>
+                    <Badge variant="secondary">Typescript</Badge>
+                    <Badge variant="secondary">Deepgram</Badge>
+                    <Badge variant="secondary">OpenAI</Badge>
+                    <Badge variant="secondary">Anthropic</Badge>
+                  </div>
+                </CardFooter>
+              </Card>
+
               <Card className="bg-gray-800 border-gray-700">
                 <CardHeader>
                   <div className="flex justify-between items-start">
