@@ -23,7 +23,7 @@ Make the site feel less corporate/serious: handwritten font, warm tan background
 
 ## Experience tab (trimmed, not resume-dense)
 - **Salesforce** — Associate Product Manager Intern, Agentic Commerce.
-- **Deepgram** — ~1 year across teams: built new Voice AI + Agent tech at Deepgram Labs, and worked under the Chief Strategy Officer; touched Labs, Applied Eng, Product, GTM, Dev Exp, Strategy, and Sales Eng.
+- **Deepgram** — Voice AI Engineering & Product Associate (not an intern — correct title). ~1 year across teams: built new Voice AI + Agent tech at Deepgram Labs, and worked under the Chief Strategy Officer; touched Labs, Applied Eng, Product, GTM, Dev Exp, Strategy, and Sales Eng.
 - Drop the old McKelvey Fellowship / Quture / GSDC / TA bullets — this tab stays high-level per request ("do not go overly into it").
 
 ## Projects tab

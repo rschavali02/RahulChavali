@@ -5,13 +5,40 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+
+function Polaroid({
+  src,
+  alt,
+  caption,
+  rotate,
+  className,
+}: {
+  src: string
+  alt: string
+  caption: string
+  rotate: number
+  className?: string
+}) {
+  return (
+    <div
+      className={`bg-card border border-border shadow-md p-3 pb-6 w-40 sm:w-48 ${className ?? ""}`}
+      style={{ transform: `rotate(${rotate}deg)` }}
+    >
+      <div className="relative w-full h-32 sm:h-40 overflow-hidden">
+        <Image src={src} alt={alt} fill className="object-cover" />
+      </div>
+      <p className="text-center text-lg mt-2">{caption}</p>
+    </div>
+  )
+}
+
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-gray-950 to-gray-900 text-white">
+    <main className="min-h-screen bg-background text-foreground">
       <div className="container mx-auto px-4 py-12 max-w-4xl">
-        {/* Header Section */} 
+        {/* Header Section */}
         <div className="flex flex-col md:flex-row items-center md:items-start gap-8 mb-12">
-          <div className="relative w-48 h-48 rounded-full overflow-hidden border-4 border-gray-700">
+          <div className="relative w-48 h-48 rounded-full overflow-hidden border-4 border-foreground rotate-[-2deg]">
             <Image
               src="/profile.JPG?height=400&width=400"
               alt="Profile picture"
@@ -22,18 +49,18 @@ export default function Home() {
           </div>
 
           <div className="flex-1 text-center md:text-left">
-            <h1 className="text-4xl font-bold mb-2">Hi there, I'm Rahul 👋</h1>
-            <p className="text-xl mb-4">I study Computer Science, Mathematics, and Entrepreneurship @ WashU</p>
+            <h1 className="text-5xl mb-2">Hi there, I'm Rahul 👋</h1>
+            <p className="text-2xl mb-4">I love building things, trying new things, and meeting new people</p>
 
             <div className="flex flex-wrap gap-2 justify-center md:justify-start mb-6">
-              <Badge variant="outline" className="px-3 py-1 border-gray-700 text-gray-300">
-                Developer
+              <Badge variant="outline" className="px-3 py-1 text-base border-foreground">
+                Builder
               </Badge>
-              <Badge variant="outline" className="px-3 py-1 border-gray-700 text-gray-300">
-                Product Manager
+              <Badge variant="outline" className="px-3 py-1 text-base border-foreground">
+                Product Person
               </Badge>
-              <Badge variant="outline" className="px-3 py-1 border-gray-700 text-gray-300">
-                Entrepreneur
+              <Badge variant="outline" className="px-3 py-1 text-base border-foreground">
+                Drummer
               </Badge>
             </div>
 
@@ -49,7 +76,7 @@ export default function Home() {
                 </Link>
               </Button>
               <Button variant="outline" size="icon" asChild>
-                <Link href="mailto:rahul.chavali1@example.com">
+                <Link href="mailto:rahul.chavali1@gmail.com">
                   <Mail className="h-5 w-5" />
                 </Link>
               </Button>
@@ -59,7 +86,7 @@ export default function Home() {
 
         {/* Main Content */}
         <Tabs defaultValue="about" className="mb-12">
-          <TabsList className="grid w-full grid-cols-4 bg-gray-800">
+          <TabsList className="grid w-full grid-cols-4">
             <TabsTrigger value="about">About</TabsTrigger>
             <TabsTrigger value="experience">Experience</TabsTrigger>
             <TabsTrigger value="projects">Projects</TabsTrigger>
@@ -67,107 +94,79 @@ export default function Home() {
           </TabsList>
 
           <TabsContent value="about" className="mt-6">
-            <Card className="bg-gray-800 border-gray-700">
+            <Card>
               <CardHeader>
-                <CardTitle>About Me</CardTitle>
+                <CardTitle className="text-3xl">About Me</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <p>
-                  I'm a passionate student studying Computer Science, Mathematics, and Entrepreneurship, with a focus on building
-                  innovative solutions that solve real-world problems. I thrive in roles where I can interact with users and focus on pain points. I specialize in building AI and ML solutions and rapid prototyping products.
+              <CardContent className="space-y-6">
+                <p className="text-lg">
+                  I'm a builder who loves working on products people actually enjoy using — currently doing that
+                  with voice AI and agents. Outside of building, I'm usually chasing a new hobby, watching the
+                  Chiefs or Manchester United, playing a card game, or enjoying the outdoors!
                 </p>
 
+                <div className="flex flex-wrap justify-center gap-4 py-4">
+                  <Polaroid src="/photos/outdoors.jpg" alt="Hiking outdoors" caption="Outdoors" rotate={-6} className="mt-4" />
+                  <Polaroid src="/photos/superheroes.jpg" alt="Superhero face paint" caption="Superheroes" rotate={4} />
+                  <Polaroid src="/photos/poker.jpg" alt="Poker chips" caption="Poker" rotate={-3} className="mt-6" />
+                  <Polaroid src="/photos/board-games.jpg" alt="Playing Catan" caption="Board Games" rotate={5} />
+                  <Polaroid src="/photos/chiefs.jpg" alt="KC Chiefs fans" caption="KC Chiefs" rotate={-4} className="mt-4" />
+                  <Polaroid src="/photos/drumming.jpg" alt="Drumming on stage" caption="Drumming" rotate={3} />
+                  <Polaroid src="/photos/soccer.jpg" alt="Soccer stadium" caption="Soccer" rotate={-5} className="mt-6" />
+                </div>
+
                 <div>
-                  <h3 className="text-lg font-semibold mb-2">Interests</h3>
-                  <ul className="list-disc list-inside space-y-1">
-                    <li>Artificial Intelligence & Machine Learning</li>
-                    <li>Product Development</li>
-                    <li>Voice Technology</li>
-                    <li>Ask me about fantasy football, Kansas City Chiefs, drumming, poker, soccer, or anything tech!</li>
+                  <h3 className="text-2xl mb-2">I love trying new things!</h3>
+                  <p className="mb-2">Here are some recent attempts at getting out of my comfort zone:</p>
+                  <ul className="list-disc list-inside space-y-1 text-lg">
+                    <li>Learning to surf</li>
+                    <li>Went to the driving range (once)</li>
+                    <li>Joined a morning workout group</li>
+                    <li>Volunteered for trash pickup in the Mission district</li>
                   </ul>
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-semibold mb-2">Education</h3>
-                  <p>Bachelor of Science in Computer Science & Mathematics</p>
-                  <p className="text-gray-400">Washington University in St. Louis, Expected Graduation 2027</p>
+                  <h3 className="text-2xl mb-2">Education</h3>
+                  <p className="text-lg">
+                    Graduated with a B.S. in Math &amp; Computer Science from Washington University in St. Louis —
+                    now finishing up a Master's there too.
+                  </p>
                 </div>
               </CardContent>
             </Card>
           </TabsContent>
 
           <TabsContent value="experience" className="mt-6">
-            <Card className="bg-gray-800 border-gray-700">
+            <Card>
               <CardHeader>
-                <CardTitle>Experience</CardTitle>
+                <CardTitle className="text-3xl">Experience</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-6">
-                <div>
-                  <h3 className="text-lg font-semibold">Currently:</h3>
-                  <ul className="mt-2 space-y-4">
-                    <li className="flex gap-3">
-                      <span className="text-green-400">▹</span>
-                      <div>
-                        <p className="font-medium">President of the McKelvey Fellowship</p>
-                        <div className="text-blue-400">
-                        <Link href={"https://www.mckelveyfellowship.com/"}>Fellowship Website</Link>
-                        </div>
-                        <p className="text-gray-400">
-                          Leading an organization committed to helping Engineering Students improve their recruiting and career opportunities by leveraging WashU Alum. 
-                        </p>
-                      </div>
-                    </li>
-                    <li className="flex gap-3">
-                      <span className="text-green-400">▹</span>
-                      <div>
-                        <p className="font-medium">Engineering & Product Intern at Deepgram (YC16)</p>
-                        <p className="text-gray-400">Building AI experiences and voice applications under the Chief Strategy Officer. </p>
-                        <p className="text-gray-400">Series B startup backed by YCombinator, WingVC, Blackrock, Nvidia, etc. </p>
-                      </div>
-                    </li>
-                  </ul>
+              <CardContent className="space-y-6 text-lg">
+                <div className="flex gap-3">
+                  <span className="text-2xl">▹</span>
+                  <div>
+                    <p className="font-bold">Associate Product Manager Intern, Agentic Commerce — Salesforce</p>
+                    <p>Building agentic shopping experiences on the Agentforce Commerce team.</p>
+                  </div>
                 </div>
-
-                <div>
-                  <h3 className="text-lg font-semibold">Previously:</h3>
-                  <ul className="mt-2 space-y-4">
-                    <li className="flex gap-3">
-                      <span className="text-green-400">▹</span>
-                      <div>
-                        <p className="font-medium">Machine Learning Research Assistant</p>
-                        <Link href={"https://github.com/rschavali02/ML-Research--UNET-1D-CNN-Image-Denoiser"} className="text-blue-400">Link to Work</Link>
-                        <p className="text-gray-400">Worked in the Computational Imaging Lab @ Washington University in St. Louis. Build CNN models for 1D denoising on hyperspectral images.</p>
-                        <p className="text-gray-400">Built CNN models for 1D denoising on hyperspectral images.</p>
-                      </div>
-                    </li>
-                    <li className="flex gap-3">
-                      <span className="text-green-400">▹</span>
-                      <div>
-                        <p className="font-medium">Engineering & Product @ Quture</p>
-                        <p className="text-gray-400">
-                          Full-Stack Development, Product Management, and GTM strategy for a secondhand fashion marketplace startup.
-                        </p>
-                      </div>
-                    </li>
-                    <li className="flex gap-3">
-                      <span className="text-green-400">▹</span>
-                      <div>
-                        <p className="font-medium">Product Development @ WashU GSDC</p>
-                        <p className="text-gray-400">
-                          Led 6 developers to create an app for WashU's on campus ice cream store. Built full-stack and ideated product iterations. 
-                        </p>
-                      </div>
-                    </li>
-                    <li className="flex gap-3">
-                      <span className="text-green-400">▹</span>
-                      <div>
-                        <p className="font-medium">Computer Science Teaching Assistant</p>
-                        <p className="text-gray-400">
-                          TA for WashU's introductory data science course. Graded assignments and held office hours. 
-                        </p>
-                      </div>
-                    </li>
-                  </ul>
+                <div className="flex gap-3">
+                  <span className="text-2xl">▹</span>
+                  <div>
+                    <p className="font-bold">Voice AI Engineering &amp; Product Associate — Deepgram (YC16)</p>
+                    <p>
+                      About a year across the company: built new Voice AI + Agent tech on Deepgram Labs, and worked
+                      under the Chief Strategy Officer touching Applied Engineering, Product, GTM, Dev Experience,
+                      Strategy, and Sales Engineering along the way.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <span className="text-2xl">▹</span>
+                  <div>
+                    <p className="font-bold">Math &amp; Computer Science — Washington University in St. Louis</p>
+                    <p>Graduated undergrad, now finishing a Master's.</p>
+                  </div>
                 </div>
               </CardContent>
             </Card>
@@ -175,7 +174,37 @@ export default function Home() {
 
           <TabsContent value="projects" className="mt-6">
             <div className="grid gap-6 md:grid-cols-2">
-              <Card className="bg-gray-800 border-gray-700">
+              <Card>
+                <CardHeader>
+                  <div className="flex justify-between items-start">
+                    <CardTitle>EVA (EMT Virtual Assistant)</CardTitle>
+                    <Button variant="ghost" size="icon" asChild>
+                      <Link href="https://github.com/koji0701/devfest-2026" target="_blank">
+                        <ExternalLink className="h-4 w-4" />
+                      </Link>
+                    </Button>
+                  </div>
+                  <CardDescription>XR / Voice AI</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p>
+                    An XR voice assistant for EMTs that automates ePCR hospital forms — records patient interactions,
+                    diarizes and cleans audio, generates report content, and fills out the form via browser agents
+                    before the ambulance even arrives.
+                  </p>
+                </CardContent>
+                <CardFooter>
+                  <div className="flex flex-wrap gap-2">
+                    <Badge variant="secondary">XR</Badge>
+                    <Badge variant="secondary">11Labs</Badge>
+                    <Badge variant="secondary">Gemini</Badge>
+                    <Badge variant="secondary">Browser Use</Badge>
+                    <Badge variant="secondary">Google DevFest Hackathon Winner</Badge>
+                  </div>
+                </CardFooter>
+              </Card>
+
+              <Card>
                 <CardHeader>
                   <div className="flex justify-between items-start">
                     <CardTitle>VocalFlow</CardTitle>
@@ -201,7 +230,7 @@ export default function Home() {
                 </CardFooter>
               </Card>
 
-              <Card className="bg-gray-800 border-gray-700">
+              <Card>
                 <CardHeader>
                   <div className="flex justify-between items-start">
                     <CardTitle>AI Voice Assistant</CardTitle>
@@ -227,7 +256,7 @@ export default function Home() {
                 </CardFooter>
               </Card>
 
-              <Card className="bg-gray-800 border-gray-700">
+              <Card>
                 <CardHeader>
                   <div className="flex justify-between items-start">
                     <CardTitle>Semantic Caching Tool</CardTitle>
@@ -249,12 +278,11 @@ export default function Home() {
                     <Badge variant="secondary">Redis</Badge>
                     <Badge variant="secondary">OpenAI Embedding Model</Badge>
                     <Badge variant="secondary">Vector Store</Badge>
-                    
                   </div>
                 </CardFooter>
               </Card>
 
-              <Card className="bg-gray-800 border-gray-700">
+              <Card>
                 <CardHeader>
                   <div className="flex justify-between items-start">
                     <CardTitle>ML Research: CNN Image Denoiser</CardTitle>
@@ -278,7 +306,7 @@ export default function Home() {
                 </CardFooter>
               </Card>
 
-              <Card className="bg-gray-800 border-gray-700">
+              <Card>
                 <CardHeader>
                   <div className="flex justify-between items-start">
                     <CardTitle>Chalkboard.ai</CardTitle>
@@ -303,7 +331,7 @@ export default function Home() {
                 </CardFooter>
               </Card>
 
-              <Card className="bg-gray-800 border-gray-700">
+              <Card>
                 <CardHeader>
                   <div className="flex justify-between items-start">
                     <CardTitle>Thrift3D</CardTitle>
@@ -328,7 +356,7 @@ export default function Home() {
                 </CardFooter>
               </Card>
 
-              <Card className="bg-gray-800 border-gray-700">
+              <Card>
                 <CardHeader>
                   <div className="flex justify-between items-start">
                     <CardTitle>Product Presentation</CardTitle>
@@ -354,43 +382,42 @@ export default function Home() {
             </div>
           </TabsContent>
 
-
           <TabsContent value="contact" className="mt-6">
-            <Card className="bg-gray-800 border-gray-700">
+            <Card>
               <CardHeader>
-                <CardTitle>Get In Touch</CardTitle>
+                <CardTitle className="text-3xl">Get In Touch</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <p>
+                <p className="text-lg">
                   I'm always open to new opportunities, collaborations, or just a friendly chat about technology and
                   innovation.
                 </p>
 
-                <div className="grid gap-2">
+                <div className="grid gap-2 text-lg">
                   <div className="flex items-center gap-2">
-                    <Mail className="h-5 w-5 text-gray-400" />
-                    <Link href="mailto:rahul.chavali1@example.com" className="text-blue-400 hover:underline">
+                    <Mail className="h-5 w-5 text-muted-foreground" />
+                    <Link href="mailto:rahul.chavali1@gmail.com" className="text-accent hover:underline">
                       rahul.chavali1@gmail.com
                     </Link>
                   </div>
 
                   <div className="flex items-center gap-2">
-                    <Github className="h-5 w-5 text-gray-400" />
+                    <Github className="h-5 w-5 text-muted-foreground" />
                     <Link
                       href="https://github.com/rschavali02"
                       target="_blank"
-                      className="text-blue-400 hover:underline"
+                      className="text-accent hover:underline"
                     >
                       github.com/rschavali02
                     </Link>
                   </div>
 
                   <div className="flex items-center gap-2">
-                    <Linkedin className="h-5 w-5 text-gray-400" />
+                    <Linkedin className="h-5 w-5 text-muted-foreground" />
                     <Link
                       href="https://www.linkedin.com/in/rahul-chavali/"
                       target="_blank"
-                      className="text-blue-400 hover:underline"
+                      className="text-accent hover:underline"
                     >
                       linkedin.com/in/rahul-chavali
                     </Link>
@@ -405,7 +432,7 @@ export default function Home() {
         </Tabs>
 
         {/* Footer */}
-        <footer className="text-center text-gray-400 mt-12">
+        <footer className="text-center text-muted-foreground mt-12">
           <p>© {new Date().getFullYear()} Rahul Chavali. All rights reserved.</p>
           <p className="text-sm mt-1">Built with Next.js and Tailwind CSS</p>
         </footer>
