@@ -220,7 +220,8 @@ export default function Home() {
                   <p>A voice-first AI assistant that helps users design and build web applications through natural conversation.</p>
                 </CardContent>
                 <CardFooter>
-                  <div className="flex gap-2">
+                  <div className="flex flex-wrap gap-2">
+                    <Badge variant="secondary">20,000 impressions</Badge>
                     <Badge variant="secondary">AI</Badge>
                     <Badge variant="secondary">Typescript</Badge>
                     <Badge variant="secondary">Deepgram</Badge>
